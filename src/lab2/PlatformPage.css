@@ -1,0 +1,45 @@
+.lab2-platform {
+  min-height: 100vh;
+  background: #e9eef1;
+  color: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.lab2-platform__shell {
+  background: #fff;
+  border-bottom: 1px solid #c5d4de;
+}
+
+.lab2-section-title {
+  margin: 0 0 10px;
+  padding: 28px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9aa7b0;
+}
+
+.lab2-platform > .lab2-about,
+.lab2-platform > .lab2-partners,
+.lab2-platform > .lab2-lecturers,
+.lab2-platform > .lab2-extra {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.lab2-platform__footer {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 40px;
+  color: #6b7a84;
+  font-size: 13px;
+}
+
+@media (max-width: 720px) {
+  .lab2-platform > .lab2-about,
+  .lab2-platform > .lab2-partners,
+  .lab2-platform > .lab2-lecturers,
+  .lab2-platform > .lab2-extra,
+  .lab2-platform__footer {
+    width: calc(100% - 20px);
+  }
+}

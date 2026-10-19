@@ -1,0 +1,16 @@
+.lab2-partners__panel {
+  background: #fff;
+  padding: clamp(24px, 4vw, 40px);
+}
+
+.lab2-partners__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px 48px;
+}
+
+@media (max-width: 720px) {
+  .lab2-partners__grid {
+    grid-template-columns: 1fr;
+  }
+}

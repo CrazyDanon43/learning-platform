@@ -1,0 +1,64 @@
+.lab2-lecturers__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 16px 18px;
+  background: #fff;
+  border: 1px solid #d7e0e6;
+}
+
+.lab2-lecturers__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lab2-lecturers__filter {
+  border: 1px solid #c5d4de;
+  background: #f7fafc;
+  color: #243844;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.lab2-lecturers__filter--active {
+  background: #8eacbc;
+  border-color: #8eacbc;
+  color: #fff;
+}
+
+.lab2-lecturers__search {
+  display: grid;
+  gap: 4px;
+  min-width: min(100%, 260px);
+}
+
+.lab2-lecturers__search span {
+  font-size: 12px;
+  color: #6b7a84;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lab2-lecturers__search input {
+  border: 2px solid #000;
+  padding: 10px 12px;
+  background: #fff;
+}
+
+.lab2-lecturers__list {
+  display: grid;
+  gap: 18px;
+}
+
+.lab2-lecturers__empty {
+  margin: 0;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #d7e0e6;
+  text-align: center;
+  color: #5a6b75;
+}

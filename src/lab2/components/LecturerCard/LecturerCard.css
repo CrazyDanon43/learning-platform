@@ -1,0 +1,160 @@
+.lab2-lecturer-card {
+  display: grid;
+  gap: 22px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #d7e0e6;
+}
+
+.lab2-lecturer-card__top {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.lab2-lecturer-card__photo-wrap {
+  width: 160px;
+}
+
+.lab2-lecturer-card__photo {
+  display: block;
+  width: 160px;
+  height: 180px;
+  object-fit: cover;
+  background: #cfd8de;
+}
+
+.lab2-lecturer-card__photo-line {
+  height: 3px;
+  margin-top: 8px;
+  background: #4f8fdc;
+}
+
+.lab2-lecturer-card__name {
+  margin: 0 0 14px;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.lab2-lecturer-card__meta {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lab2-lecturer-card__meta li {
+  display: grid;
+  gap: 2px;
+}
+
+.lab2-lecturer-card__meta span {
+  font-size: 12px;
+  color: #6b7a84;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lab2-lecturer-card__meta strong {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+}
+
+.lab2-lecturer-card__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.8fr);
+  gap: 24px;
+  padding-top: 8px;
+  border-top: 1px solid #e5ecf0;
+}
+
+.lab2-lecturer-card__label {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #5a6b75;
+}
+
+.lab2-lecturer-card__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.lab2-lecturer-card__tab {
+  border: 1px solid #c5d4de;
+  background: #f7fafc;
+  color: #243844;
+  padding: 8px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.lab2-lecturer-card__tab--active {
+  background: #8eacbc;
+  border-color: #8eacbc;
+  color: #fff;
+}
+
+.lab2-lecturer-card__summary {
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #333;
+}
+
+.lab2-lecturer-card__topics {
+  margin: 0;
+  padding-left: 18px;
+  color: #333;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.lab2-lecturer-card__topics li + li {
+  margin-top: 4px;
+}
+
+.lab2-lecturer-card__tariff-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.lab2-lecturer-card__tariff-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  background: #f3f7fa;
+  font-size: 13px;
+}
+
+.lab2-lecturer-card__tariff-list strong {
+  white-space: nowrap;
+  color: #1f3a4d;
+}
+
+@media (max-width: 860px) {
+  .lab2-lecturer-card__top,
+  .lab2-lecturer-card__body {
+    grid-template-columns: 1fr;
+  }
+
+  .lab2-lecturer-card__photo-wrap,
+  .lab2-lecturer-card__photo {
+    width: 100%;
+  }
+
+  .lab2-lecturer-card__photo {
+    height: 220px;
+  }
+}

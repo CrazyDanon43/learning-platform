@@ -1,0 +1,48 @@
+.lab2-partner-card {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+
+.lab2-partner-card__head {
+  min-height: 42px;
+}
+
+.lab2-partner-card__logo-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+}
+
+.lab2-partner-card__logo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.lab2-partner-card__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #222;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1;
+  color: #222;
+}
+
+.lab2-partner-card__logo-link:hover .lab2-partner-card__arrow {
+  background: #222;
+  color: #fff;
+}
+
+.lab2-partner-card__description {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #333;
+}

@@ -1,0 +1,87 @@
+import { useState } from 'react';
+import './LecturerCard.css';
+
+function LecturerCard({
+  fullName,
+  photo,
+  education,
+  experience,
+  degree,
+  disciplines,
+  tariffs,
+}) {
+  const [activeDiscipline, setActiveDiscipline] = useState(0);
+  const current = disciplines[activeDiscipline];
+
+  return (
+    <article className="lab2-lecturer-card">
+      <div className="lab2-lecturer-card__top">
+        <div className="lab2-lecturer-card__photo-wrap">
+          <img src={photo} alt={fullName} className="lab2-lecturer-card__photo" />
+          <div className="lab2-lecturer-card__photo-line" />
+        </div>
+
+        <div className="lab2-lecturer-card__info">
+          <h3 className="lab2-lecturer-card__name">{fullName}</h3>
+          <ul className="lab2-lecturer-card__meta">
+            <li>
+              <span>Образование</span>
+              <strong>{education}</strong>
+            </li>
+            <li>
+              <span>Стаж</span>
+              <strong>{experience}</strong>
+            </li>
+            <li>
+              <span>Учёная степень</span>
+              <strong>{degree}</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="lab2-lecturer-card__body">
+        <div className="lab2-lecturer-card__disciplines">
+          <p className="lab2-lecturer-card__label">Преподаваемые дисциплины</p>
+          <div className="lab2-lecturer-card__tabs">
+            {disciplines.map((discipline, index) => (
+              <button
+                key={discipline.title}
+                type="button"
+                className={
+                  activeDiscipline === index
+                    ? 'lab2-lecturer-card__tab lab2-lecturer-card__tab--active'
+                    : 'lab2-lecturer-card__tab'
+                }
+                onClick={() => setActiveDiscipline(index)}
+              >
+                {discipline.title}
+              </button>
+            ))}
+          </div>
+
+          <p className="lab2-lecturer-card__summary">{current.summary}</p>
+          <ul className="lab2-lecturer-card__topics">
+            {current.topics.map((topic) => (
+              <li key={topic}>{topic}</li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="lab2-lecturer-card__tariffs">
+          <p className="lab2-lecturer-card__label">Тарифы</p>
+          <ul className="lab2-lecturer-card__tariff-list">
+            {tariffs.map((tariff) => (
+              <li key={tariff.name}>
+                <span>{tariff.name}</span>
+                <strong>{tariff.price}</strong>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+export default LecturerCard;

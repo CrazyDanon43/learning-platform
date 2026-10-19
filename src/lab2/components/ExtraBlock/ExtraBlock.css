@@ -1,0 +1,94 @@
+.lab2-extra__panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  gap: 24px;
+  padding: clamp(20px, 3vw, 32px);
+  background: #fff;
+  border: 1px solid #d7e0e6;
+}
+
+.lab2-extra__steps {
+  display: grid;
+  gap: 14px;
+}
+
+.lab2-extra__steps article {
+  padding: 16px 18px;
+  background: #f3f7fa;
+  border: 3px solid #8eacbc;
+}
+
+.lab2-extra__steps strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #8eacbc;
+  letter-spacing: 0.06em;
+}
+
+.lab2-extra__steps h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+
+.lab2-extra__steps p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #44545e;
+}
+
+.lab2-extra__form {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.lab2-extra__form h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.lab2-extra__form label {
+  display: grid;
+  gap: 4px;
+}
+
+.lab2-extra__form span {
+  font-size: 12px;
+  color: #6b7a84;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.lab2-extra__form input,
+.lab2-extra__form select,
+.lab2-extra__form textarea {
+  border: 1px solid #c5d4de;
+  padding: 10px 12px;
+  background: #fff;
+}
+
+.lab2-extra__form button {
+  border: none;
+  background: #8eacbc;
+  color: #fff;
+  padding: 12px 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lab2-extra__form button:hover {
+  background: #7a9aab;
+}
+
+.lab2-extra__success {
+  margin: 0;
+  font-size: 14px;
+  color: #1f6b4a;
+}
+
+@media (max-width: 860px) {
+  .lab2-extra__panel {
+    grid-template-columns: 1fr;
+  }
+}
