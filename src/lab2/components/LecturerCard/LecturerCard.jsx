@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './LecturerCard.css';
 
 function LecturerCard({
@@ -11,13 +11,61 @@ function LecturerCard({
   tariffs,
 }) {
   const [activeDiscipline, setActiveDiscipline] = useState(0);
+  const [isVisible, setIsVisible] = useState(
+    () => typeof IntersectionObserver === 'undefined',
+  );
+  const [isLoaded, setIsLoaded] = useState(false);
+  const photoRef = useRef(null);
   const current = disciplines[activeDiscipline];
+
+  useEffect(() => {
+    const element = photoRef.current;
+    if (!element || isVisible) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 },
+    );
+
+    observer.observe(element);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [isVisible]);
 
   return (
     <article className="lab2-lecturer-card">
       <div className="lab2-lecturer-card__top">
         <div className="lab2-lecturer-card__photo-wrap">
-          <img src={photo} alt={fullName} className="lab2-lecturer-card__photo" />
+          <div className="lab2-lecturer-card__photo-box" ref={photoRef}>
+            {(!isVisible || !isLoaded) && (
+              <div
+                className="lab2-lecturer-card__photo-placeholder"
+                aria-hidden="true"
+              >
+                Загрузка фото...
+              </div>
+            )}
+            {isVisible && (
+              <img
+                src={photo}
+                alt={fullName}
+                className={
+                  isLoaded
+                    ? 'lab2-lecturer-card__photo lab2-lecturer-card__photo--loaded'
+                    : 'lab2-lecturer-card__photo'
+                }
+                onLoad={() => setIsLoaded(true)}
+                onError={() => setIsLoaded(true)}
+              />
+            )}
+          </div>
           <div className="lab2-lecturer-card__photo-line" />
         </div>
 
