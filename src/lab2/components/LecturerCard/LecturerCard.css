@@ -17,12 +17,38 @@
   width: 160px;
 }
 
-.lab2-lecturer-card__photo {
-  display: block;
+.lab2-lecturer-card__photo-box {
+  position: relative;
   width: 160px;
   height: 180px;
+  background: #dfe7ec;
+  overflow: hidden;
+}
+
+.lab2-lecturer-card__photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  text-align: center;
+  font-size: 13px;
+  color: #5a6b75;
+  background: #dfe7ec;
+}
+
+.lab2-lecturer-card__photo {
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  background: #cfd8de;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.lab2-lecturer-card__photo--loaded {
+  opacity: 1;
 }
 
 .lab2-lecturer-card__photo-line {
@@ -149,12 +175,17 @@
     grid-template-columns: 1fr;
   }
 
-  .lab2-lecturer-card__photo-wrap,
-  .lab2-lecturer-card__photo {
+  .lab2-lecturer-card__photo-wrap {
     width: 100%;
   }
 
-  .lab2-lecturer-card__photo {
+  .lab2-lecturer-card__photo-box {
+    width: 100%;
     height: 220px;
+  }
+
+  .lab2-lecturer-card__photo {
+    width: 100%;
+    height: 100%;
   }
 }
